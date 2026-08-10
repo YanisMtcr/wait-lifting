@@ -1,0 +1,15 @@
+{
+  "name": "wait-lifting",
+  "owner": {
+    "name": "Yanis Montacer",
+    "url": "https://github.com/YanisMtcr"
+  },
+  "plugins": [
+    {
+      "name": "wait-lifting",
+      "source": "./",
+      "description": "Turns Claude Code wait time into workout time. When a long command runs (build, install, tests, docker...), you get told to do push-ups or squats instead of doomscrolling.",
+      "license": "MIT"
+    }
+  ]
+}

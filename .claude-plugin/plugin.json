@@ -1,0 +1,10 @@
+{
+  "name": "wait-lifting",
+  "version": "0.4.0",
+  "description": "Turns Claude Code wait time into workout time. When a long command runs (build, install, tests, docker...), you get told to do push-ups or squats instead of doomscrolling.",
+  "author": {
+    "name": "Yanis Montacer"
+  },
+  "keywords": ["fitness", "workout", "fun", "productivity", "breaks"],
+  "license": "MIT"
+}
