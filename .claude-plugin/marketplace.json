@@ -1,5 +1,6 @@
 {
   "name": "wait-lifting",
+  "description": "Marketplace for the wait-lifting plugin: turns Claude Code wait time into workout time.",
   "owner": {
     "name": "Yanis Montacer",
     "url": "https://github.com/YanisMtcr"
