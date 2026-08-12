@@ -15,7 +15,7 @@ Turn the user's wait time into workout time. Before starting a long stretch of a
 ## When NOT to fire
 
 - The estimated work is under a minute.
-- An exercise was already suggested in the last ~10 minutes of this conversation, by you OR by the hook. The hook fires automatically on long Bash commands and on subagent launches, so if a workout message just appeared, stay silent.
+- The hook fired in the last 10 minutes. Its messages are invisible to you, so check the shared cooldown file instead: run `find ~/.claude/wait-lifting.last -mmin -10` and stay silent if it prints the path.
 - You are about to launch a subagent (Task/Agent tool): the hook already covers that case, so don't double up.
 - The user is mid-conversation and about to answer a question. Never make them exercise while you wait for THEM.
 
@@ -37,6 +37,24 @@ One line, in English, with the estimated duration. Match these examples:
 - "This refactor will take me about 3 minutes. 15 push-ups while you wait?"
 - "About 2 min of research ahead, just enough for 20 squats."
 - "I'll write the doc (~5 min), you do the circuit: 10 push-ups, 20 squats, 30s plank."
+
+## After suggesting
+
+Update the shared state so the hook stays quiet and the status line shows the coach during the wait. Split your message into an info part and a workout part, then run:
+
+```bash
+python3 - <<'EOF'
+import json, time
+from pathlib import Path
+d = Path.home() / ".claude"
+(d / "wait-lifting.last").write_text(str(time.time()))
+(d / "wait-lifting.msg").write_text(json.dumps({
+    "info": "<info part>",
+    "workout": "<workout part>",
+    "expires": time.time() + <estimated minutes> * 60,
+}))
+EOF
+```
 
 ## Rules
 
