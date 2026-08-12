@@ -2,6 +2,7 @@
 
 # Wait Lifting 🏋️
 
+[![CI](https://github.com/YanisMtcr/wait-lifting/actions/workflows/ci.yml/badge.svg)](https://github.com/YanisMtcr/wait-lifting/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/YanisMtcr/wait-lifting/pulls)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-plugin-d97757.svg)](https://code.claude.com/docs/en/plugins)
